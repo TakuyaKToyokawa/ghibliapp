@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ title, description, release_date }) => {
   return (
-    <div class="flex">
+    <div class="flex flex-wrap w-8">
       <div>{title}</div>
       <div>{description}</div>
       <div>{release_date}</div>
