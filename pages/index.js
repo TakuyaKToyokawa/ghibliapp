@@ -4,6 +4,7 @@ import Image from "next/image";
 import axios from "axios";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import Character from "../components/Character";
 
 export default function Home() {
   // all useStates
@@ -36,16 +37,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div class="flex flex-col justify-items-center w-full">
-      <img class="w-64" src="/logos/ghibli_logo.png" />
-      <div class="flex flex-row">
-        <Button onClick={SortByReleaseDate} text="sort release"></Button>
-        <Button onClick={SortByRunningTime} text="sort running"></Button>
-        <Button onClick={SortByTitle} text="sort title"></Button>
+    <div class="background flex flex-col justify-center w-full bg-gray-50">
+      <div class="w-full align-center justify-center">
+        <img class="w-64 invert-0" src="/logos/ghibli_logo.png" />
       </div>
-      <div class="flex flex-col w-full">
+      <div class="flex flex-row fixed top-10 right-10 p-8 bg-white shadow-md rounded-2xl z-20">
+        <Button onClick={SortByReleaseDate} text="Sort Release"></Button>
+        <Button onClick={SortByRunningTime} text="Sort Running"></Button>
+        <Button onClick={SortByTitle} text="Sort Title"></Button>
+      </div>
+      <div class="flex flex-col w-full z-10">
         <div class="flex justify-center w-full ">
-          <div class="flex flex-wrap w-3/4">
+          <div class="flex flex-wrap w-5/6">
             {films.map((o, i) => {
               return (
                 <div class="w-full md:w-1/2 p-4">
@@ -53,6 +56,7 @@ export default function Home() {
                     release_date={o.release_date}
                     title={o.title}
                     description={o.description}
+                    running_time={o.running_time}
                   />
                 </div>
               );
@@ -60,6 +64,18 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="box z-0">
+        <img src="/leaf.png"></img>
+        <img src="/leaf.png"></img>
+        <img src="/leaf.png"></img>
+        <img src="/leaf.png"></img>
+        <img src="/leaf.png"></img>
+        <img src="/leaf.png"></img>
+        <img src="/leaf.png"></img>
+        <img src="/leaf.png"></img>
+        <img src="/leaf.png"></img>
+      </div>
+      <img class="fixed bottom-0"src="/mountain.png"/>
     </div>
   );
 }
