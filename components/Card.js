@@ -12,6 +12,7 @@ const Card = ({ title, description, release_date, running_time }) => {
           <p class="overflow-y-auto overflow-hidden text-sm pr-2 ">
             {description}
           </p>
+          <img class="absolute bottom-3 right-10 w-24 md:right-20 opacity-50"src="/little_totoro.svg"></img>
         </div>
         <div class="bg-gradient-to-r from-green-500 to-green-600 h-8 rounded-b-lg"></div>
       </div>

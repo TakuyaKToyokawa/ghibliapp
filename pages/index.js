@@ -30,6 +30,7 @@ export default function Home() {
   const SortByTitle = () => {
     const copy = [...films];
     setFilms(copy.sort((a, b) => a.title > b.title));
+    console.log(copy);
   };
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function Home() {
 
   return (
     <div class="background flex flex-col justify-center w-full bg-gray-50">
-      <div class="w-full align-center justify-center">
+      <div class="flex w-full justify-center m-8">
         <img class="w-64 invert-0" src="/logos/ghibli_logo.png" />
       </div>
       <div class="flex flex-row fixed top-10 right-10 p-8 bg-white shadow-md rounded-2xl z-20">
