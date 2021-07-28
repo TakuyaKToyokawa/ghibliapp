@@ -29,7 +29,11 @@ export default function Home() {
 
   const SortByTitle = () => {
     const copy = [...films];
-    setFilms(copy.sort((a, b) => a.title > b.title));
+    setFilms(
+      copy.sort(function (a, b) {
+        return a.title === b.title ? 0 : a.title < b.title ? -1 : 1;
+      })
+    );
     console.log(copy);
   };
 
@@ -38,15 +42,33 @@ export default function Home() {
   }, []);
 
   return (
-    <div class="background flex flex-col justify-center w-full bg-gray-50">
-      <div class="flex w-full justify-center m-8">
+    <div class="background flex flex-col justify-center bg-gray-50">
+      <div class="flex w-full justify-center my-8">
         <img class="w-64 invert-0" src="/logos/ghibli_logo.png" />
       </div>
-      <div class="flex flex-row fixed top-10 right-10 p-8 bg-white shadow-md rounded-2xl z-20">
-        <Button onClick={SortByReleaseDate} text="Sort Release"></Button>
-        <Button onClick={SortByRunningTime} text="Sort Running"></Button>
-        <Button onClick={SortByTitle} text="Sort Title"></Button>
+      <div class="flex flex-col fixed w-full z-20 bottom-0 md:top-10 md:right-10 mb-8 items-center md:items-end">
+        <p class="font-bold bg-white p-2 rounded-t-xl shadow-md md:pb-3 md:bg-transparent md:shadow-none">
+          Sort By...
+        </p>
+        <div class="flex flex-row justify-center md:justify-none md:w-auto">
+          <Button
+            onClick={SortByReleaseDate}
+            icon="/calendar.svg"
+            text="Release"
+          ></Button>
+          <Button
+            onClick={SortByRunningTime}
+            icon="/clock.svg"
+            text="Movie Length"
+          ></Button>
+          <Button
+            onClick={SortByTitle}
+            icon="/pencil.svg"
+            text="Sort Title"
+          ></Button>
+        </div>
       </div>
+
       <div class="flex flex-col w-full z-10">
         <div class="flex justify-center w-full ">
           <div class="flex flex-wrap w-5/6">
@@ -76,7 +98,7 @@ export default function Home() {
         <img src="/leaf.png"></img>
         <img src="/leaf.png"></img>
       </div>
-      <img class="fixed bottom-0"src="/mountain.png"/>
+      <img class="fixed bottom-0 w-full" src="/mountain.png" />
     </div>
   );
 }
