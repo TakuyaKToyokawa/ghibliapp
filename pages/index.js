@@ -4,6 +4,7 @@ import Image from "next/image";
 import axios from "axios";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import RoundButton from "../components/RoundButton";
 import BackgroundAnimation from "../components/BackgroundAnimation";
 
 export default function Home() {
@@ -34,7 +35,6 @@ export default function Home() {
         return a.title === b.title ? 0 : a.title < b.title ? -1 : 1;
       })
     );
-    console.log(copy);
   };
 
   useEffect(() => {
@@ -43,7 +43,11 @@ export default function Home() {
 
   return (
     <>
-      <div class="loading absolute flex flex-col w-screen h-screen justify-center items-center z-40">
+      {/* loading animation */}
+      <div
+        id="home"
+        class="loading absolute flex flex-col w-screen h-screen justify-center items-center z-40"
+      >
         <img class="w-64" src="/logos/ghibli_logo.png"></img>
         <h1 class="text-gray-800 text-xl pt-6 font-bold">Ghibli Films.</h1>
         <p>Your one stop for all classic Ghibli films.</p>
@@ -52,8 +56,8 @@ export default function Home() {
         <div class="flex justify-center my-8">
           <img class="w-64 invert-0" src="/logos/ghibli_logo.png" />
         </div>
-        <div class="flex flex-col fixed md:w-auto h-24 z-20 bottom-0 md:top-10 md:right-10 mb-8 items-center md:items-end">
-          <p class="font-bold bg-white p-2 rounded-t-xl shadow-md md:pb-3 md:bg-transparent md:shadow-none">
+        <div class="flex flex-col fixed w-full md:w-auto h-24 z-20 bottom-0 md:top-10 md:right-10 mb-8 items-center md:items-end">
+          <p class="font-bold bg-white p-2 rounded-xl shadow-md mb-3 md:pb-3 md:bg-transparent md:shadow-none">
             Sort By...
           </p>
           <div class="flex flex-row justify-center md:justify-none md:w-auto">
@@ -74,7 +78,9 @@ export default function Home() {
             ></Button>
           </div>
         </div>
-
+        <div class="fixed top-10 sm:bottom-7 right-10 z-20">
+          <RoundButton href="#home" icon="/cheveron-up.svg" />
+        </div>
         <div class="flex flex-col w-full z-10">
           <div class="flex justify-center w-full ">
             <div class="flex flex-wrap w-5/6">
@@ -93,10 +99,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div class="h-12"></div>
         <BackgroundAnimation />
         <img class="fixed bottom-0 w-full" src="/mountain.png" />
       </main>
-      {/* loading animation */}
     </>
   );
 }
