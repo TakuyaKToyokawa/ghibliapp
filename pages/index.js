@@ -4,7 +4,7 @@ import Image from "next/image";
 import axios from "axios";
 import Card from "../components/Card";
 import Button from "../components/Button";
-import Character from "../components/Character";
+import BackgroundAnimation from "../components/BackgroundAnimation";
 
 export default function Home() {
   // all useStates
@@ -46,7 +46,7 @@ export default function Home() {
       <div class="flex w-full justify-center my-8">
         <img class="w-64 invert-0" src="/logos/ghibli_logo.png" />
       </div>
-      <div class="flex flex-col fixed w-full z-20 bottom-0 md:top-10 md:right-10 mb-8 items-center md:items-end">
+      <div class="flex flex-col fixed w-full md:w-auto h-24 z-20 bottom-0 md:top-10 md:right-10 mb-8 items-center md:items-end">
         <p class="font-bold bg-white p-2 rounded-t-xl shadow-md md:pb-3 md:bg-transparent md:shadow-none">
           Sort By...
         </p>
@@ -87,17 +87,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="box z-0">
-        <img src="/leaf.png"></img>
-        <img src="/leaf.png"></img>
-        <img src="/leaf.png"></img>
-        <img src="/leaf.png"></img>
-        <img src="/leaf.png"></img>
-        <img src="/leaf.png"></img>
-        <img src="/leaf.png"></img>
-        <img src="/leaf.png"></img>
-        <img src="/leaf.png"></img>
-      </div>
+      <BackgroundAnimation/>
       <img class="fixed bottom-0 w-full" src="/mountain.png" />
     </div>
   );
