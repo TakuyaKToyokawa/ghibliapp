@@ -74,7 +74,7 @@ export default function Home() {
             <Button
               onClick={SortByTitle}
               icon="/pencil.svg"
-              text="Sort Title"
+              text="Title"
             ></Button>
           </div>
         </div>
