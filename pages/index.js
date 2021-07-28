@@ -45,14 +45,13 @@ export default function Home() {
     <>
       {/* loading animation */}
       <div
-        id="home"
         className="loading absolute flex flex-col w-screen h-screen justify-center items-center z-40"
       >
         <img className="w-64" src="/logos/ghibli_logo.png"></img>
         <h1 className="text-gray-800 text-xl pt-6 font-bold">Ghibli Films.</h1>
         <p>Your one stop for all classic Ghibli films.</p>
       </div>
-      <main className="background flex flex-col justify-center bg-gray-50">
+      <main id="home" className="background flex flex-col justify-center bg-gray-50">
         <div className="flex justify-center my-8">
           <img className="w-64 invert-0" src="/logos/ghibli_logo.png" />
         </div>
