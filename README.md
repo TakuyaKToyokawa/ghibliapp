@@ -2,8 +2,11 @@ This application is deployed on heroku over at https://ghibli-test-app.herokuapp
 
 ## App Tested On:
 Google Chrome
+
 Firefox
+
 Opera GX
+
 Microsoft Edge
 
 ## Installing App to Local Device
