@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ title, description, release_date, running_time }) => {
   return (
-    <div class="shadow-md rounded-2xl">
+    <div class="shadow-md rounded-2xl transition duration-200 transform hover:-translate-y-1">
       <div class="flex flex-col ">
         <div class="flex relative flex-col bg-white column w-full p-6 h-56">
           <h1 class="flex-initial font-bold text-gray-800 text-xl mb-1">

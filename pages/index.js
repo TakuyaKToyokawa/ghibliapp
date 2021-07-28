@@ -42,53 +42,61 @@ export default function Home() {
   }, []);
 
   return (
-    <div class="background flex flex-col justify-center bg-gray-50">
-      <div class="flex w-full justify-center my-8">
-        <img class="w-64 invert-0" src="/logos/ghibli_logo.png" />
+    <>
+      <div class="loading absolute flex flex-col w-screen h-screen justify-center items-center z-40">
+        <img class="w-64" src="/logos/ghibli_logo.png"></img>
+        <h1 class="text-gray-800 text-xl pt-6 font-bold">Ghibli Films.</h1>
+        <p>Your one stop for all classic Ghibli films.</p>
       </div>
-      <div class="flex flex-col fixed w-full md:w-auto h-24 z-20 bottom-0 md:top-10 md:right-10 mb-8 items-center md:items-end">
-        <p class="font-bold bg-white p-2 rounded-t-xl shadow-md md:pb-3 md:bg-transparent md:shadow-none">
-          Sort By...
-        </p>
-        <div class="flex flex-row justify-center md:justify-none md:w-auto">
-          <Button
-            onClick={SortByReleaseDate}
-            icon="/calendar.svg"
-            text="Release"
-          ></Button>
-          <Button
-            onClick={SortByRunningTime}
-            icon="/clock.svg"
-            text="Movie Length"
-          ></Button>
-          <Button
-            onClick={SortByTitle}
-            icon="/pencil.svg"
-            text="Sort Title"
-          ></Button>
+      <main class="background flex flex-col justify-center bg-gray-50">
+        <div class="flex justify-center my-8">
+          <img class="w-64 invert-0" src="/logos/ghibli_logo.png" />
         </div>
-      </div>
-
-      <div class="flex flex-col w-full z-10">
-        <div class="flex justify-center w-full ">
-          <div class="flex flex-wrap w-5/6">
-            {films.map((o, i) => {
-              return (
-                <div class="w-full md:w-1/2 p-4">
-                  <Card
-                    release_date={o.release_date}
-                    title={o.title}
-                    description={o.description}
-                    running_time={o.running_time}
-                  />
-                </div>
-              );
-            })}
+        <div class="flex flex-col fixed md:w-auto h-24 z-20 bottom-0 md:top-10 md:right-10 mb-8 items-center md:items-end">
+          <p class="font-bold bg-white p-2 rounded-t-xl shadow-md md:pb-3 md:bg-transparent md:shadow-none">
+            Sort By...
+          </p>
+          <div class="flex flex-row justify-center md:justify-none md:w-auto">
+            <Button
+              onClick={SortByReleaseDate}
+              icon="/calendar.svg"
+              text="Release"
+            ></Button>
+            <Button
+              onClick={SortByRunningTime}
+              icon="/clock.svg"
+              text="Movie Length"
+            ></Button>
+            <Button
+              onClick={SortByTitle}
+              icon="/pencil.svg"
+              text="Sort Title"
+            ></Button>
           </div>
         </div>
-      </div>
-      <BackgroundAnimation/>
-      <img class="fixed bottom-0 w-full" src="/mountain.png" />
-    </div>
+
+        <div class="flex flex-col w-full z-10">
+          <div class="flex justify-center w-full ">
+            <div class="flex flex-wrap w-5/6">
+              {films.map((o, i) => {
+                return (
+                  <div class="w-full md:w-1/2 p-4">
+                    <Card
+                      release_date={o.release_date}
+                      title={o.title}
+                      description={o.description}
+                      running_time={o.running_time}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <BackgroundAnimation />
+        <img class="fixed bottom-0 w-full" src="/mountain.png" />
+      </main>
+      {/* loading animation */}
+    </>
   );
 }
