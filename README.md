@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This application is deployed on heroku over at https://ghibli-test-app.herokuapp.com/.
+
+## Installing App to Local Device
+
+1. Clone the respository to your desktop.
+2. Run Terminal in cloned repository **(make sure to cd in to the correct folder!)**
+3. Terminal: Run 'npm install' to install dependencies
+4. Terminal: Run 'npm run dev' to start Next.js server
+5. Open 'localhost:3000' on your browser
+
+The application should be running on localhost:3000 after the installation.
+
 
 ## Getting Started
 
