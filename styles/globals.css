@@ -53,6 +53,7 @@ h6 {
 
 /*Imported Animation*/
 .loading {
+  position:fixed;
   opacity: 0;
   width: 80vw;
   visibility: hidden;
