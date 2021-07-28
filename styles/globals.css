@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Nobile:wght@400;700&display=swap');
 
 html,
 body {
@@ -12,6 +16,37 @@ a {
   text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Nobile';
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #edf2f7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 100vh;
+  border: 3px solid #edf2f7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
 * {
+  font-family: 'Exo 2';
   box-sizing: border-box;
 }
+
+
