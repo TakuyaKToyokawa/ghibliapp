@@ -1,5 +1,11 @@
 This application is deployed on heroku over at https://ghibli-test-app.herokuapp.com/.
 
+## App Tested On:
+Google Chrome
+Firefox
+Opera GX
+Microsoft Edge
+
 ## Installing App to Local Device
 
 1. Clone the respository to your desktop.
