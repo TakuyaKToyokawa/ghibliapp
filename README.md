@@ -1,5 +1,3 @@
-This application is deployed on heroku over at https://ghibli-test-app.herokuapp.com/.
-
 ## App Tested On:
 Google Chrome
 
@@ -19,6 +17,8 @@ Microsoft Edge
 
 The application should be running on localhost:3000 after the installation.
 
+## Hosted Application
+This application is deployed on heroku over at https://ghibli-test-app.herokuapp.com/.
 
 ## Getting Started
 
